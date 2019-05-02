@@ -15,11 +15,18 @@ def update_rule():
 
 def select_individual():
 #select individual to be updated you can access all Pokemon with 'setup.poke_list'
-    return None
+    for pokemon in setup.poke_list:
+        if (pokemon.fitness >= 12):
+            individual = pokemon
+    return individual
 
 def select_neighbor(neighbors):
 #select one neighbor from the list neighbors
-    return None
+    compare=neighbors[0]
+    for neighbor in neighbors:
+        if (neighbor.fitness<compare.fitness):
+            compare = neighbor
+    return compare
 
 def get_neighbors(individual):
 #returns a list of Pokemon who are neighbors of the Pokemon individual
