@@ -1,3 +1,5 @@
+#Birth- death update
+
 import setup
 
 import random
@@ -11,22 +13,57 @@ def update_rule():
     if(individual != None):
       neighbors = get_neighbors(individual)
       neighbor = select_neighbor(neighbors)
-    return individual, neighbor
+      
+      #------------Imitation------------#
+      #if (neighbor.fitness > individual.fitness):
+      #  return individual, neighbor
+      #else:
+      #  return None,None
+      #----------------------------------#
 
+#--------------- BD -----------------#
+  
+  #def select_individual():
+#    Hpokemon =[]
+#    for pokemon in poke_list:
+ #       if (pokemon.fitness >= BREEDING_FITNESS):
+  #          Hpokemon.append(pokemon)
+   # RChoose=random.randint(0,len(Hpokemon)-1)
+        
+    #return Hpokemon[RChoose]
+
+#def select_neighbor(neighbors):
+ #   rand = random.randint(0,len(neighbors)-1)
+  #  return neighbors[rand]
+#------------------------------------------#  
+
+
+#----------------DB-----------------------#
+#def select_individual():
+ #   RChoose=random.randint(0,len(poke_list)-1)
+        
+  #  return poke_list[RChoose]
+
+#def select_neighbor(neighbors):
+ #   compare=neighbors[0]
+  #  for neighbor in neighbors:
+   #     if (neighbor.fitness>compare.fitness):
+    #        compare = neighbor
+    #return compare
+#-----------------------------------------#
+  
+#----------------Imitation----------------#
 def select_individual():
-#select individual to be updated you can access all Pokemon with 'setup.poke_list'
-    for pokemon in setup.poke_list:
-        if (pokemon.fitness >= 12):
-            individual = pokemon
-    return individual
+    RChoose=random.randint(0,len(poke_list)-1)  
+    return poke_list[RChoose]
 
 def select_neighbor(neighbors):
-#select one neighbor from the list neighbors
     compare=neighbors[0]
     for neighbor in neighbors:
-        if (neighbor.fitness<compare.fitness):
+        if (neighbor.fitness>compare.fitness):
             compare = neighbor
     return compare
+#------------------------------------------#
 
 def get_neighbors(individual):
 #returns a list of Pokemon who are neighbors of the Pokemon individual

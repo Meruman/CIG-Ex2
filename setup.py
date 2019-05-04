@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
+from google.colab import widgets
+import time
+
 Bulbasaur = "Bulbasaur"
 Charmander = "Charmander"
 Squirtle = "Squirtle"
